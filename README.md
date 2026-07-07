@@ -153,11 +153,11 @@ cp -r academic-figure-skill ~/.claude/skills/
 安装后在 Claude Code 会话中直接描述需求即可自动触发：
 
 ```text
-对中国小麦品质数据 multip-traits.csv 做相关性分析、山脊分布、PCA 降维，组合成一张多面板图。
+请使用 academic-figure-skill 分析项目文件中的multip-traits.csv数据，并进行可视化分析。
 ```
 
 ```text
-用 Academic Figure Skill 画一个 Nature 风格的差异表达火山图。
+用academic-figure-skill将data.csv数据绘制为一个 Nature 风格的差异表达火山图。
 ```
 
 如需更新：
