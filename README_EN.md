@@ -226,12 +226,7 @@ For other AI coding assistants:
 ## Directory Layout
 
 ```text
-academic-figure-skill/                 ← Project root
-├── multip-traits.csv                  ← Example data (wheat quality traits)
-├── multip_traits_figure.py            ← Example multi-panel figure script
-├── Untitled.ipynb                     ← Jupyter interactive analysis template
-├── docs/                              ← Design specification documents
-└── academic-figure-skill/             ← Core skill package (this directory)
+	academic-figure-skill/             ← Core skill package (this directory)
     ├── README.md                      ← Documentation (Chinese)
     ├── README_EN.md                   ← Documentation (English)
     ├── LICENSE                        ← Apache 2.0 License

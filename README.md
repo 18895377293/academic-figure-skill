@@ -226,12 +226,7 @@ cp academic-figure-skill/install/copilot/copilot-instructions.md <your-project>/
 ## 项目结构
 
 ```text
-academic-figure-skill/                              ← 项目根目录
-├── multip-traits.csv                  ← 示例数据（小麦品质性状）
-├── multip_traits_figure.py            ← 示例多面板图生成脚本
-├── Untitled.ipynb                     ← Jupyter 交互式分析模板
-├── docs/                              ← 设计规范文档
-└── academic-figure-skill/                          ← 核心 Skill 包（本目录）
+	academic-figure-skill/                          ← 核心 Skill 包（本目录）
     ├── README.md                      ← 项目说明文档（本文件）
     ├── LICENSE                        ← MIT 许可证
     ├── SKILL.md                       ← 技能入口：8 步闭环工作流 + 全部规则
