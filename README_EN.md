@@ -153,11 +153,11 @@ cp -r academic-figure-skill ~/.claude/skills/
 After installation, describe your task naturally in a Claude Code session — the skill triggers automatically:
 
 ```text
-Analyze the wheat quality data multip-traits.csv: correlation analysis, ridge distribution, PCA, composed as a multi-panel figure.
+Please use academic-figure-skill to analyze the multip-traits.csv data in the project files and perform a visualization analysis.
 ```
 
 ```text
-Use Academic Figure Skill to create a Nature-style differential expression volcano plot.
+Use academic-figure-skill to plot the data.csv data as a Nature-style differential expression volcano plot.
 ```
 
 To update:
