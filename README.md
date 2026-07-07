@@ -46,7 +46,9 @@
 
 ## 项目介绍
 
-Academic Figure Skill 解决的核心痛点是：**科研人员在制作投稿级图表时，需要在 Python/R/Illustrator 之间反复切换，且最终成品常因配色、排版、分辨率等问题被审稿人退回修改。** Academic Figure Skill 将 CNS 期刊的图表设计规范（字体、配色、尺寸、导出参数）编码为可复用的视觉基线，覆盖 29 种常见图型，每种配备经过验证的生产脚本。用户只需提供数据和科学问题，Academic Figure Skill 自动完成从选型到交付的全流程。
+Academic Figure Skill 是一个面向 AI 编程助手（Claude Code、Codex 等）的 Skill 包。其工作方式是：将 Nature / Cell / Science 系列期刊的图表制作规范（字体 Arial/Helvetica、栏宽 89mm/183mm、PDF 矢量导出、300dpi 栅格预览）和 29 种常见图型的视觉参数编码为 `SKILL.md` 及其引用的 16 份参考文档。当用户提供数据和科学问题后，Skill 引导 LLM 执行一个标准化的 8 步流程：澄清研究问题 → 分类图型原型 → 论证面板方案并获取用户确认 → 检测 Python/R 运行时 → 注入统一的排版和配色基线 → 扫描 `assets/figures/` 中的生产脚本（匹配则原生运行，无匹配则跨类型继承视觉参数）→ 数据校验 → 4 轮 QA 自检 → 输出矢量 PDF 与统计报告。
+
+该 Skill 不替代 Python 或 R 的绘图能力，而是提供一套结构化的约束条件（constraints）和先验知识（priors），使 LLM 在生成绘图代码时遵循 CNS 期刊的视觉标准，减少人工调整排版、配色和导出参数的工作量。在多面板合成场景中，Skill 支持 Python 脚本和 R 脚本的混合编排——R 面板通过 Cairo 设备渲染为位图，Python 的 `compose.py` 排版引擎按物理尺寸拼合多面板。
 
 ### 设计原则
 
@@ -182,7 +184,7 @@ cp -r SKILL.md references/ scripts/ assets/ install/codex/* ~/.codex/skills/acad
 也可以让 Codex 代为安装：
 
 ```text
-从 <your-repo-url> 安装 Codex skill。
+从 https://github.com/TingxiYu/academic-figure-skill.git 安装 Codex skill。
 克隆仓库后，将 SKILL.md、references/、scripts/、assets/ 和 install/codex/ 复制到 ~/.codex/skills/academic-figure-skill/。
 保持完整目录结构，不要只复制 SKILL.md。
 ```
@@ -192,7 +194,7 @@ cp -r SKILL.md references/ scripts/ assets/ install/codex/* ~/.codex/skills/acad
 将 Skill 规则文件复制到项目根目录，Cursor 在生成代码时会自动遵循其中的规范：
 
 ```bash
-git clone <your-repo-url> academic-figure-skill
+git clone https://github.com/TingxiYu/academic-figure-skill.git
 cp academic-figure-skill/install/cursor/.cursorrules <your-project>/.cursorrules
 ```
 
@@ -203,7 +205,7 @@ cp academic-figure-skill/install/cursor/.cursorrules <your-project>/.cursorrules
 将 Skill 指令文件复制到项目的 `.github/` 目录，Copilot 在生成代码时会加载这些上下文：
 
 ```bash
-git clone <your-repo-url> academic-figure-skill
+git clone https://github.com/TingxiYu/academic-figure-skill.git
 mkdir -p <your-project>/.github
 cp academic-figure-skill/install/copilot/copilot-instructions.md <your-project>/.github/
 ```

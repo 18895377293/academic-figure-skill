@@ -146,7 +146,7 @@ Clone the repository to a stable path and install the skill:
 ```bash
 mkdir -p ~/ai-skills
 cd ~/ai-skills
-git clone https://github.com/TingxiYu/academic-figure-skill.git
+git clone https://github.com/TingxiYu/academic-figure-skill.git academic-figure-skill
 cp -r academic-figure-skill ~/.claude/skills/
 ```
 
@@ -184,7 +184,7 @@ After installation, describe your task naturally in a Codex session — the skil
 You can also ask Codex to install for you:
 
 ```text
-Install the Codex skill from <your-repo-url>.
+Install the Codex skill from https://github.com/TingxiYu/academic-figure-skill.git.
 Clone the repo, then copy SKILL.md, references/, scripts/, assets/, and install/codex/ to ~/.codex/skills/academic-figure-skill/.
 Keep the full directory structure — do not copy only SKILL.md.
 ```
@@ -194,7 +194,7 @@ Keep the full directory structure — do not copy only SKILL.md.
 Copy the skill rules file to your project root. Cursor will automatically follow the specifications when generating code:
 
 ```bash
-git clone <your-repo-url> academic-figure-skill
+git clone https://github.com/TingxiYu/academic-figure-skill.git
 cp academic-figure-skill/install/cursor/.cursorrules <your-project>/.cursorrules
 ```
 
@@ -205,7 +205,7 @@ The `.cursorrules` file includes color palettes, typography baselines, export sp
 Copy the skill instructions file to your project's `.github/` directory. Copilot loads this context when generating code:
 
 ```bash
-git clone <your-repo-url> academic-figure-skill
+git clone https://github.com/TingxiYu/academic-figure-skill.git
 mkdir -p <your-project>/.github
 cp academic-figure-skill/install/copilot/copilot-instructions.md <your-project>/.github/
 ```
