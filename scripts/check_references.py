@@ -17,12 +17,12 @@ import json, os, re, sys
 from pathlib import Path
 
 PROJECT = Path(__file__).resolve().parents[2]
-CNSPILOT = PROJECT / "academic-figure-skill"
-SKILL_MD = CNSPILOT / "SKILL.md"
-DIRMAP_MD = CNSPILOT / "references" / "directory-map.md"
-COMPOSE_PY = CNSPILOT / "scripts" / "compose.py"
-FIGURES_DIR = CNSPILOT / "assets" / "figures"
-REFERENCES = CNSPILOT / "references"
+SKILL_DIR = PROJECT / "academic-figure-skill"
+SKILL_MD = SKILL_DIR / "SKILL.md"
+DIRMAP_MD = SKILL_DIR / "references" / "directory-map.md"
+COMPOSE_PY = SKILL_DIR / "scripts" / "compose.py"
+FIGURES_DIR = SKILL_DIR / "assets" / "figures"
+REFERENCES = SKILL_DIR / "references"
 
 
 def parse_directory_map() -> dict[str, str]:
@@ -171,7 +171,7 @@ def check_skill_refs_exist(refs: list[str]) -> list[dict]:
         if ref in seen:
             continue
         seen.add(ref)
-        path = CNSPILOT / ref
+        path = SKILL_DIR / ref
         if not path.exists():
             findings.append({
                 "check": "missing_referenced_file",

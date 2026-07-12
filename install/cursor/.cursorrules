@@ -1,12 +1,12 @@
-# CNSpilot — Scientific Figure Making Rules
+# Academic Figure Skill — Scientific Figure Making Rules
 # Place this file at: <your-project>/.cursorrules
 # Cursor auto-loads it. Generated: 2026-07-05 13:39 UTC
 
 You are helping create scientific figures for Nature/Cell/Science journals.
 Follow these rules when writing matplotlib/ggplot2/ComplexHeatmap code.
 
-# CNSpilot Portable Core Rules
-# Auto-generated from cnspilot/SKILL.md — 2026-07-05 13:39 UTC
+# Academic Figure Skill Portable Core Rules
+# Auto-generated from academic-figure-skill/SKILL.md — 2026-07-05 13:39 UTC
 # These rules work across Claude Code, Codex, Cursor, and Copilot.
 
 ## Design Principles
@@ -18,7 +18,7 @@ Follow these rules when writing matplotlib/ggplot2/ComplexHeatmap code.
 ## Color Palette — COPY VERBATIM
 
 ```python
-# CNSpilot Nature/Cell/Science Color Palette -- COPY VERBATIM
+# Academic Figure Skill Nature/Cell/Science Color Palette -- COPY VERBATIM
 CATEGORICAL = ["#2166AC", "#B2182B", "#1B7837", "#F1A340", "#762A83", "#666666"]
 CATEGORICAL_EXTENDED = [
     "#2166AC", "#B2182B", "#1B7837", "#F1A340", "#762A83", "#666666",
@@ -32,7 +32,7 @@ BLACK       = "#222222"
 ```
 
 ```r
-# CNSpilot Nature/Cell/Science Color Palette -- COPY VERBATIM
+# Academic Figure Skill Nature/Cell/Science Color Palette -- COPY VERBATIM
 categorical <- c("#2166AC", "#B2182B", "#1B7837", "#F1A340", "#762A83", "#666666")
 categorical_extended <- c(
   "#2166AC", "#B2182B", "#1B7837", "#F1A340", "#762A83", "#666666",
@@ -50,7 +50,7 @@ Color roles: Blue (#2166AC) = control/baseline. Red (#B2182B) = emphasis/up-regu
 ## Typography — COPY VERBATIM
 
 ```python
-# CNSpilot Typography Baseline — COPY VERBATIM, place at TOP of script
+# Academic Figure Skill Typography Baseline — COPY VERBATIM, place at TOP of script
 import matplotlib as mpl
 mpl.rcParams.update({
     "font.family": "sans-serif",
@@ -74,7 +74,7 @@ mpl.rcParams.update({
 ```
 
 ```r
-# CNSpilot Typography Baseline — COPY VERBATIM, place at TOP of script
+# Academic Figure Skill Typography Baseline — COPY VERBATIM, place at TOP of script
 library(ggplot2)
 theme_cns <- theme_bw(base_size = 8, base_family = "Arial") +
   theme(
@@ -94,7 +94,7 @@ Font: Arial/Helvetica. No text below 5pt at final print dimensions. Panel labels
 ## Export — COPY VERBATIM
 
 ```python
-# CNSpilot Export Baseline — COPY VERBATIM
+# Academic Figure Skill Export Baseline — COPY VERBATIM
 mpl.rcParams.update({
     "pdf.fonttype": 42,         # TrueType font embedding
     "svg.fonttype": "none",     # editable text in SVG
@@ -103,7 +103,7 @@ mpl.rcParams.update({
 })
 
 def save_cns_figure(fig, filename):
-    """Standard CNSpilot export: vector PDF + 300dpi PNG preview."""
+    """Standard Academic Figure Skill export: vector PDF + 300dpi PNG preview."""
     fig.savefig(f"{filename}.pdf", bbox_inches="tight", dpi=300)
     fig.savefig(f"{filename}.png", bbox_inches="tight", dpi=300)
 ```
